@@ -7,6 +7,16 @@ services:
       - ./src:/app/src:ro
     ports:
       - 666:666
+  nginx:
+    image: nginx:stable-alpine
+    ports:
+      - "8080:80"
+    # volumes:
+    #   - ./templates:/etc/nginx/templates
+    volumes:
+      - .\nginx\default .conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - test
   mongo:
     image: mongo
     restart: always
