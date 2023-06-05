@@ -14,7 +14,7 @@ services:
     # volumes:
     #   - ./templates:/etc/nginx/templates
     volumes:
-      - .\nginx\default.conf:/etc/nginx/conf.d/default.conf
+      - .\nginx\default.conf:/etc/nginx/conf.d
     depends_on:
       - test
   mongo:
